@@ -1,0 +1,56 @@
+.footer {
+  ul {
+    li > a {
+      color: #333;
+      padding-right: 5px;
+      font-family: @font-family-nexa-light;
+      &:hover {
+        text-decoration: none;
+      }
+      &:after {
+        display: block;
+        content: " ";
+        float: right;
+        width: 0;
+        height: 13px;
+        border-left: solid 1px #AD926F;
+        margin-top: 2px;
+        margin-right: -3px;
+      }
+      &._5 {
+        &:after {
+          border-left-color:transparent;
+        }
+      }
+      .fa {
+        font-size: 18px;
+        color: #AD926F;
+      }
+    }
+    li {
+      position: relative;
+      &._6 {
+        .card-visa, .card-master {
+          background: @spriteImage;
+          width: 24px;
+          height: 16px;
+          display: inline-block;
+          margin-bottom: -3px;
+        }
+        .card-visa {
+          background-position: -221px -21px;
+          margin-right: 8px;
+        }
+        .card-master {
+          background-position: -221px -2px;
+        }
+      }
+    }
+    &.pull-right {
+      li {
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+.current-selection {
+  padding-left: 10px;
+  padding-right: 10px;
+  & > ._1 {
+    font-size: @font-size-large * 0.9;
+    font-family: @font-family-nexa-light;
+    margin-bottom: 4px;
+    margin-top: 10px;
+    color: #C8123C;
+  }
+  & > ._2 {
+    font-size: @font-size-base * 1.1;
+    font-family: @font-family-lato;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.4px;
+    margin-top: 8px;
+    position: relative;
+    & > .fa {
+      color: #A1A3A6;
+      text-shadow: 0 1px 3px rgba(0, 1, 0, 0.45);
+      margin-right: 4px;
+    }
+  }
+  & > ._3 {
+    & > ._1 {
+      font-size: @font-size-base;
+      font-family: @font-family-lato;
+      text-transform: uppercase;
+      padding: 4px 8px;
+      border: 1px solid #9A806F;
+      .border-radius(2px);
+      padding-left: 20px;
+    }
+    & > ul {
+      padding-left: 10px;
+      & > li {
+        position: relative;
+        padding-left: 10px;
+        span {
+          font-size: @font-size-base * 0.9;
+          display: inline-block;
+        }
+        & > ._2 {
+          font-family: @font-family-lato;
+          min-width: 120px;
+        }
+        & > ._3 {
+          font-family: @font-family-opensans;
+        }
+        & > .fa {
+          font-size: @font-size-base * 0.8;
+          position: absolute;
+          left: 0px;
+          top: 4px;
+          text-shadow: 0 1px 0px rgba(0, 1, 0, 0.45);
+        }
+      }
+    }
+  }
+}

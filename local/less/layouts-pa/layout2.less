@@ -1,0 +1,101 @@
+.pa {
+  .master {
+    .layout2 {
+      
+      &.content-wrapper {
+        background-color: #fff;
+
+        & > .breadcrumbs-wrapper {
+          height: 30px;
+          margin-top: 8px;
+          margin-bottom: 8px;
+        }
+
+        & > .page-wrapper {
+          // background-color: aqua;
+
+          & .container-wrapper {
+            float: left;
+            width: 100%;
+
+            &._2 {
+              width: 100%;
+              overflow: hidden;
+              // background: rgb(255, 167, 167);
+            }
+
+            &._1 {
+              position: relative;
+              right: @right-box-width;
+              // background: rgb(255, 246, 137);
+            }
+          }
+          & .container-wrapper._1 {
+            & > ._A {
+              float: left;
+              position: relative;
+
+              &.left-box {
+                width: @left-box-width;
+                left: @right-box-width;
+              }
+              &.right-box {
+                width: @right-box-width;
+                left: @right-box-width;
+                // background-color: red;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@selectproduct-right-box-width: 48%;
+@selectproduct-left-box-width: 52%;
+
+.pa {
+  .master {
+    .layout2 {
+
+      .pa-select-product {
+
+        ._cw {
+          float: left;
+          width: 100%;
+
+          &._2 {
+            width: 100%;
+            overflow: hidden;
+            // background:  silver;
+          }
+
+          &._1 {
+            position: relative;
+            right: @selectproduct-right-box-width;
+            // background: gold;
+          }
+        }
+
+        & ._cw._1 {
+          & > ._A {
+            float: left;
+            position: relative;
+
+            &.left-box {
+              width: @selectproduct-left-box-width;
+              left: @selectproduct-right-box-width;
+              padding-left: 10px; 
+            }
+            &.right-box {
+              width: @selectproduct-right-box-width;
+              left: @selectproduct-right-box-width;
+            }
+          }
+        }
+      }
+    }
+  }
+}

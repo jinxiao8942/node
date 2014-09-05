@@ -1,0 +1,158 @@
+.header-wrapper {
+  .menu {
+    .pa-header-menu-hover() {
+        background-color: #a08863;
+        .box-shadow(0 0 0 0 rgba(0,0,0,0););
+        span {
+            color: #fff !important;
+            text-shadow: 0 1px 3px rgba(0, 1, 0, 0.45);
+            &.icon {
+                &.print {
+                  background-position: 16px -26px;
+                }
+                &.digital {
+                  background-position: -49px -26px;
+                }
+                &.outdoor {
+                  background-position: -111px -26px;
+                }
+                &.design {
+                  background-position: -175px -26px;
+                }
+                &.samples {
+                  background-position: -226px -26px;
+                }
+                &.info {
+                  background-position: -283px -26px;
+                }
+                &.delivery {
+                  background-position: -340px -26px;
+                }
+                &.contact {
+                  background-position: -402px -26px;
+                }
+                &.cart {
+                  background-position: -468px -26px;
+                }
+            }
+        }
+    }
+    .dropdown-toggle {
+      .border-radiuses (4px, 0, 0, 4px);
+      border: none;
+      position: relative;
+      display: inline-block;
+      height: 60px;
+      width: 70px;
+      span {
+          position: absolute;
+          width: 100%;
+          left: 0px;
+          &.caption {
+              bottom: 4px;
+              text-align: center;
+              font-size: @font-size-small;
+              font-family: @font-family-nexa-bold;
+              // text-transform: uppercase;
+              color: #908f8f;
+          }
+          &.icon {
+              background: url('/images/menu.png') 16px 0px no-repeat;
+              display: block;
+              top: 7px;
+              height: 27px;
+              bottom: auto;
+              &.print {
+                background-position: 16px 0px;
+              }
+              &.digital {
+                background-position: -49px 0px;
+              }
+              &.outdoor {
+                background-position: -111px 0px;
+              }
+              &.design {
+                background-position: -175px 0px;
+              }
+              &.samples {
+                background-position: -226px 0px;
+              }
+              &.info {
+                background-position: -283px 0px;
+              }
+              &.delivery {
+                background-position: -340px 0px;
+              }
+              &.contact {
+                background-position: -402px 0px;
+              }
+              &.cart {
+                background-position: -468px 0px;
+              }
+          }
+      }
+      &.hovered {
+        .pa-header-menu-hover();
+      }
+    }
+    .show-on-hover > .dropdown-menu {
+      top: 89%;
+    }
+    .dropdown-menu {
+      // display: block;
+      border: 1px solid #A2A1A1;
+      background-color: white;
+      width: 200px;
+      .border-radiuses(0, 0, 0, 0);
+      padding-top: 0px;
+      padding-bottom: 0px;
+      a {
+        text-transform: uppercase;
+        border-bottom:1px dotted #A2A1A1;
+        color: darken(#A2A1A1, 10%);
+        padding: 8px 8px;
+        font-size: @font-size-small;
+        &.has-submenu:after {
+          margin-right:0px;
+          display:block;
+          content:" ";
+          float:right;
+          width:0;
+          height:0;
+          border-color:transparent;
+          border-left-color:#A2A1A1;
+          border-style:solid;
+          border-width:5px 0 5px 5px;
+          margin-top:5px;
+        }
+        &.hovered {
+          background-color: #a08863;
+          color: #fff;
+          text-shadow: 0 1px 3px rgba(0, 1, 0, 0.45);
+        }
+      }
+      .dropdown-submenu {
+        & > a:after {
+          border-left-color:#A2A1A1;
+          margin-right:0px;
+        }
+        & > a.hovered {
+          &:after {
+            border-left-color:#fff;
+          }
+        }
+      }
+      & > .dropdown-submenu {
+        & li > a {
+          background-color: #a08863;
+          color: #fff;
+          &.hovered {
+            background-color: #fff;
+            color:darken(#A2A1A1, 10%);
+            text-shadow: 0 1px 3px rgba(255, 255, 255, 0.45);
+          }
+        }
+      }
+    }
+  }
+}

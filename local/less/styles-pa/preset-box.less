@@ -1,0 +1,52 @@
+.preset-box {
+  @presetBoxHeight: 142px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  .decor {
+    background: @spriteImage;
+    width: 18px;
+    height: @presetBoxHeight;
+    position: absolute;
+    top: 0px;
+    bottom: auto;
+    &._1 {
+      right: 0px;
+      left: auto;
+      background-position: -227px -62px;
+    }
+    &._2 {
+      left: 0px;
+      right: auto;
+      background-position: -147px -66px;
+    }
+  }
+  ._4 {
+    display: block;
+    position: absolute;
+    width: @masterWidth - 36;
+    left: 18px;
+    margin: 0px auto;
+    height: 100px;
+    margin-top: @presetBoxHeight * 0.1;
+    overflow: hidden;
+  }
+  ._3 {
+    display: inline-block;
+    width: 100%/6;
+  }
+  a {
+    display: block;
+    position: relative;
+    border-right: 2px solid #ddd;
+    padding-left: 2px;
+    &._5 {
+      border-right: 2px solid transparent;
+    }
+    & > img {
+      width: 95%;
+      vertical-align: top;
+    }
+  }
+  
+}

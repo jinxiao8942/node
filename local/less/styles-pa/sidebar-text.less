@@ -1,0 +1,28 @@
+.sidebar-text {
+  margin-left: 12px;
+  margin-top: 100px;
+  margin-bottom: 80px;
+  @sidebar-base-font-size: 42px;
+  & > ._1 {
+    line-height: (@sidebar-base-font-size * 0.9);
+    & > span {
+      display: block;
+      font-size: @sidebar-base-font-size;
+      color: #E5D9CA;
+    }
+    & > ._1 {
+      font-family: @font-family-nexa-light;
+    }
+    & > ._2 {
+      font-family: @font-family-nexa-bold;
+    }
+  }
+  & > ._2 {
+    font-size:(@sidebar-base-font-size * 0.45);
+    line-height:(@sidebar-base-font-size * 0.45) * 0.97;
+    text-transform: uppercase;
+    font-family: @font-family-nexa-light;
+    margin-top: 10px;
+    color: #9A806F;
+  }
+}

@@ -18,13 +18,14 @@ var gulp = require('gulp'),
     pages: 'local/pages/**/*.coffee',
     jsx: 'local/jsx/**/*.jsx',
     timestamp: 'production/.timestamp',
-    html: '**/*.html',
+    html: '**/*.html'
   };
 
   vendorFiles = {
     css: [
       'assets-vendor/bootstrap/dist/css/bootstrap.min.css',
       'assets-vendor/fontawesome/css/font-awesome.min.css',
+      'jin/css/style.css'
     ],
     js: [
       'assets-vendor/jquery/dist/jquery.min.js',
@@ -33,6 +34,7 @@ var gulp = require('gulp'),
       'assets-vendor/react/react-with-addons.js',
       'assets-vendor/react-bootstrap/react-bootstrap.js',
       'assets-vendor/requirejs/require.js',
+      'jin/js/main.js'
     ],
     fonts: [
       'assets-vendor/fontawesome/fonts/fontawesome-webfont.*',
@@ -48,18 +50,48 @@ var server = {
   _lr: null,
   start: function() {
     var express = require('express');
+    var multer  = require('multer');
+    var bodyParser = require('body-parser');
+
     var app = express();
     app.use(require('connect-livereload')());
     app.use(express.static(__dirname + '/production', { maxAge: oneDay }));
     app.use(express.static(__dirname + '/assets-vendor/underscore', { maxAge: oneDay }));
     app.use(express.static(server.basePath));
+
     app.listen(server.port);
     console.log("Application started at " + server.port);
     console.log("Visit at http://localhost:" + server.port);
-    var router = app, uploadManager = require('./uploadManager')(router);
-    // app.post("/get_data", function(req, res){
-    //   res.send(req.body);
-    // });
+
+    // var router = app, fileUpload = require('./fileUpload')(router);
+    var fileUploadPath = './data/';
+    app.use(multer({ dest: fileUploadPath}));
+    app.use(bodyParser());
+    var fs = require('fs');
+
+    app.post('/upload', function (req, res) {
+      fs.writeFile(fileUploadPath + 'note.txt', req.body['notedata'], function(err) {
+        if(err) {
+            console.log(err);
+        } else {
+            console.log("Your Data is saved!!!");
+        }
+      });
+
+      res.send(req.files.file);
+    });
+
+    app.post('/delete-file', function (req, res) {
+      if( req.body['delfile'] != 'undefined' ){
+        var delFilePath = fileUploadPath + req.body['delfile'];
+        if (fs.existsSync(delFilePath)) {
+          fs.unlinkSync(delFilePath);
+        }
+        res.send('deleted-success');
+      } else {
+        res.send('deleted-failure');
+      }
+    });
   },
   livereload: function() {
     server._lr = require('tiny-lr')();

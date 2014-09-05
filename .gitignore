@@ -1,0 +1,24 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/dist
+/tmp
+
+# dependencies
+/node_modules
+/vendor/*
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage/*
+/assets-vendor/*
+/libpeerconnection.log
+npm-debug.log
+testem.log
+
+
+/production/**/*.js
+/production/**/*.css
+/production/.timestamp
+production/jsx/page

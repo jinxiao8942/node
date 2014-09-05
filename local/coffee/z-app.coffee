@@ -1,3 +1,3 @@
 $(document).ready (->
-  console.log "starting the application"
+	console.log "starting the application"
 )
